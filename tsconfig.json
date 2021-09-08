@@ -1,0 +1,28 @@
+{
+	"compilerOptions": {
+		// Target latest version of ECMAScript.
+		// 目标是ECMAScript的最新版本。
+		"target": "esnext",
+		// Search under node_modules for non-relative imports.
+		// 在 node_modules下搜索并相对导入。
+		"moduleResolution": "node",
+		// Process & infer types from .js files.
+		// 从.js文件处理并推断类型。
+		"allowJs": true,
+		// Don't emit; allow Babel to transform files.
+		// 不要发射；允许Babel转换文件。
+		"noEmit": true,
+		// Enable strictest settings like strictNullChecks & noImplicitAny.
+		// 启用最严格的设置，如strictNullChecks和noImplicitAny。
+		"strict": true,
+		// Disallow features that require cross-file information for emit.
+		// 不允许需要跨文件信息才能发射的功能。
+		"isolatedModules": true,
+		// Import non-ES modules as default imports.
+		// 将非ES模块作为默认导入导入。
+		"esModuleInterop": true
+	},
+	"include": [
+		"src"
+	]
+}
