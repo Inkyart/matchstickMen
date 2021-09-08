@@ -13,7 +13,7 @@
     "webpack-cli": "^4.8.0"
   },
   "scripts": {
-    "compile": "babel ts --out-dir lib --extensions '.ts'",
+    "compile": "babel src/ts --out-dir lib --extensions '.ts'",
     "pack": "node script.js"
   }
 }
