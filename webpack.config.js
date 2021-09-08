@@ -2,9 +2,9 @@ const path = require("path");
 
 module.exports = {
 	mode: "production",
-	entry: "./src/index.ts",
+	entry: "./ts/index.ts",
 	output: {
-		path: path.resolve("./www/dist"),
+		path: path.resolve("./dist"),
 		filename: "[name].bundle.js",
 		chunkFilename: "[name].chunk.[chunkhash:7].js",
 	},
