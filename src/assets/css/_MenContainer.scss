@@ -1,0 +1,169 @@
+@charset "UTF-8";
+// ------------------------------
+// @desc 火柴人样式文件
+// @author 夜明筱笙
+// @date 2021-09-09
+// ------------------------------
+
+// =S 混合器
+
+// 肢体
+@mixin limb {
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: flex-end;
+    align-items: center;
+	transform-origin: center top;
+}
+// 旋转 角度
+@mixin angle($angle) {
+    transform: rotateZ($angle);
+    transform-origin: center top;
+}
+
+// =E 混合器
+
+
+/** =S 火柴人样式 */
+
+// 火柴人容器
+.MenContainer {
+    position: absolute;
+    width: 200px;
+    height: 260px;
+    border: 1px solid #000;
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+// 火柴人头部
+.header {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: relative;
+	background-color: blanchedalmond;
+	border: 1px solid #000;
+}
+
+// 火柴人身体
+.body {
+    width: 4px;
+    height: 120px;
+    display: flex;
+    flex-flow: nowrap column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    background-color: #000;
+	border-radius: 250px;
+}
+
+/** ==S 火柴人 部位样式 */
+
+// 火柴人 肢体 部位 手部
+// 火柴人 肢体 部位 脚部
+.hands,
+.foots {
+	position: relative;
+    border-radius: 50%;
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content: center;
+}
+
+// 左侧的 肢体
+.left {
+    @include angle(10deg);
+}
+
+// 右侧的 肢体
+.right {
+    @include angle(-10deg);
+}
+
+// 火柴人 肢体 容器
+.foot-Container,
+.hand-Container {
+    border-radius: 50%;
+    position: absolute;
+	top: bottom;
+	left: center;
+    div {
+        background-color: #000;
+    }
+}
+
+/** ===S 火柴人 部位样式 详细*/
+
+/** ====S 火柴人 手部 */
+
+// 火柴人 上臂
+.upperArm {
+    position: relative;
+    width: 2px;
+    height: 60px;
+    @include limb();
+}
+
+// 火柴人 手肘
+.elbow {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+	padding: 1px;
+}
+
+// 火柴人 下臂
+.lowerArm {
+    width: 2px;
+    height: 50px;
+    @include limb();
+}
+
+// 火柴人 手掌
+.palm {
+    width: 4px;
+    height: 4px;
+    padding: 1px;
+    border-radius: 50%;
+}
+
+/** ====E 火柴人 手部 */
+
+/** ====S 火柴人 腿部 */
+
+// 火柴人 大腿
+.thigh{
+	width: 2px;
+	height: 60px;
+    @include limb();
+}
+// 火柴人 膝盖
+.knee{
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+	padding: 1px;
+}
+// 火柴人 小腿
+.calf{
+	width: 2px;
+	height: 40px;
+    @include limb();
+}
+// 火柴人 脚掌
+.foot {
+	width: 5px;
+	height: 2px;
+}
+
+/** ====E 火柴人 腿部 */
+
+/** ===E 火柴人 部位样式 详细*/
+
+/** ==E 火柴人 部位样式 */
+
+/** =E 火柴人样式 */

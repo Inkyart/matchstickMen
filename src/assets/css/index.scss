@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/**
+ * @desc 主样式文件
+ * @author 夜明筱笙
+ * @date 2021-09-09
+*/
+
+/** =S 全局样式 */
+
+/* 取消边距 下划线 列表样式 */
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+// 页面内容居中
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(196, 196, 196);
+}
+
+/** =E 全局样式 */
+
+@import './MenContainer' // 导入 火柴人样式

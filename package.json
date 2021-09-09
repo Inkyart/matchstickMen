@@ -14,6 +14,7 @@
   },
   "scripts": {
     "compile": "babel src/ts --out-dir lib --extensions '.ts'",
-    "pack": "node script.js"
+    "pack": "node script.js",
+    "scss": "scss src/assets/css/index.scss --watch"
   }
 }

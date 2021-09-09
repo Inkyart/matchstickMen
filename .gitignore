@@ -103,6 +103,10 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Sass-cache
+.sass-cache
+
 =======
 node_modules
 >>>>>>> 初始化项目

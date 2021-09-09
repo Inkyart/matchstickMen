@@ -1,0 +1,150 @@
+@charset "UTF-8";
+/**
+ * @desc 主样式文件
+ * @author 夜明筱笙
+ * @date 2021-09-09
+*/
+/** =S 全局样式 */
+/* 取消边距 下划线 列表样式 */
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none; }
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: nowrap row;
+  justify-content: center;
+  align-items: center;
+  background-color: #c4c4c4; }
+
+/** =E 全局样式 */
+/** =S 火柴人样式 */
+.MenContainer {
+  position: absolute;
+  width: 200px;
+  height: 260px;
+  border: 1px solid #000;
+  display: flex;
+  flex-flow: nowrap column;
+  justify-content: flex-start;
+  align-items: center; }
+
+.header {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+  background-color: blanchedalmond;
+  border: 1px solid #000; }
+
+.body {
+  width: 4px;
+  height: 120px;
+  display: flex;
+  flex-flow: nowrap column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background-color: #000;
+  border-radius: 250px; }
+
+/** ==S 火柴人 部位样式 */
+.hands,
+.foots {
+  position: relative;
+  border-radius: 50%;
+  display: flex;
+  flex-flow: nowrap row;
+  justify-content: center; }
+
+.left {
+  transform: rotateZ(10deg);
+  transform-origin: center top; }
+
+.right {
+  transform: rotateZ(-10deg);
+  transform-origin: center top; }
+
+.foot-Container,
+.hand-Container {
+  border-radius: 50%;
+  position: absolute;
+  top: bottom;
+  left: center; }
+  .foot-Container div,
+  .hand-Container div {
+    background-color: #000; }
+
+/** ===S 火柴人 部位样式 详细*/
+/** ====S 火柴人 手部 */
+.upperArm {
+  position: relative;
+  width: 2px;
+  height: 60px;
+  display: flex;
+  flex-flow: nowrap column;
+  justify-content: flex-end;
+  align-items: center;
+  transform-origin: center top; }
+
+.elbow {
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  padding: 1px; }
+
+.lowerArm {
+  width: 2px;
+  height: 50px;
+  display: flex;
+  flex-flow: nowrap column;
+  justify-content: flex-end;
+  align-items: center;
+  transform-origin: center top; }
+
+.palm {
+  width: 4px;
+  height: 4px;
+  padding: 1px;
+  border-radius: 50%; }
+
+/** ====E 火柴人 手部 */
+/** ====S 火柴人 腿部 */
+.thigh {
+  width: 2px;
+  height: 60px;
+  display: flex;
+  flex-flow: nowrap column;
+  justify-content: flex-end;
+  align-items: center;
+  transform-origin: center top; }
+
+.knee {
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  padding: 1px; }
+
+.calf {
+  width: 2px;
+  height: 40px;
+  display: flex;
+  flex-flow: nowrap column;
+  justify-content: flex-end;
+  align-items: center;
+  transform-origin: center top; }
+
+.foot {
+  width: 5px;
+  height: 2px; }
+
+/** ====E 火柴人 腿部 */
+/** ===E 火柴人 部位样式 详细*/
+/** ==E 火柴人 部位样式 */
+/** =E 火柴人样式 */
+
+/*# sourceMappingURL=index.css.map */
