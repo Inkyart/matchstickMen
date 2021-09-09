@@ -25,8 +25,8 @@ body {
 /** =S 火柴人样式 */
 .MenContainer {
   position: absolute;
-  width: 200px;
-  height: 260px;
+  width: 230px;
+  height: 300px;
   border: 1px solid #000;
   display: flex;
   flex-flow: nowrap column;
@@ -34,15 +34,33 @@ body {
   align-items: center; }
 
 .header {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   position: relative;
-  background-color: blanchedalmond;
-  border: 1px solid #000; }
+  background-color: #000; }
+  .header::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+    right: 10px;
+    top: 15px; }
+  .header::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    border-bottom: 1px solid white;
+    top: 30px;
+    right: 6px; }
 
 .body {
-  width: 4px;
+  width: 6px;
   height: 120px;
   display: flex;
   flex-flow: nowrap column;
@@ -50,7 +68,8 @@ body {
   justify-content: space-between;
   position: relative;
   background-color: #000;
-  border-radius: 250px; }
+  border-radius: 250px;
+  padding: 3px 0; }
 
 /** ==S 火柴人 部位样式 */
 .hands,
@@ -62,11 +81,11 @@ body {
   justify-content: center; }
 
 .left {
-  transform: rotateZ(10deg);
+  transform: rotateZ(6deg);
   transform-origin: center top; }
 
 .right {
-  transform: rotateZ(-10deg);
+  transform: rotateZ(-6deg);
   transform-origin: center top; }
 
 .foot-Container,
@@ -83,8 +102,9 @@ body {
 /** ====S 火柴人 手部 */
 .upperArm {
   position: relative;
-  width: 2px;
+  width: 6px;
   height: 60px;
+  border-radius: 50px;
   display: flex;
   flex-flow: nowrap column;
   justify-content: flex-end;
@@ -92,19 +112,20 @@ body {
   transform-origin: center top; }
 
 .elbow {
-  width: 2px;
-  height: 2px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   padding: 1px; }
 
 .lowerArm {
-  width: 2px;
-  height: 50px;
+  width: 6px;
+  height: 60px;
   display: flex;
   flex-flow: nowrap column;
   justify-content: flex-end;
   align-items: center;
-  transform-origin: center top; }
+  transform-origin: center top;
+  border-radius: 50px; }
 
 .palm {
   width: 4px;
@@ -115,36 +136,82 @@ body {
 /** ====E 火柴人 手部 */
 /** ====S 火柴人 腿部 */
 .thigh {
-  width: 2px;
+  width: 6px;
+  height: 70px;
+  display: flex;
+  flex-flow: nowrap column;
+  justify-content: flex-end;
+  align-items: center;
+  transform-origin: center top;
+  border-radius: 50px; }
+
+.knee {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  padding: 1px; }
+
+.calf {
+  width: 6px;
   height: 60px;
   display: flex;
   flex-flow: nowrap column;
   justify-content: flex-end;
   align-items: center;
-  transform-origin: center top; }
-
-.knee {
-  width: 2px;
-  height: 2px;
-  border-radius: 50%;
-  padding: 1px; }
-
-.calf {
-  width: 2px;
-  height: 40px;
-  display: flex;
-  flex-flow: nowrap column;
-  justify-content: flex-end;
-  align-items: center;
-  transform-origin: center top; }
+  transform-origin: center top;
+  border-radius: 50px; }
 
 .foot {
+  position: relative;
+  margin-top: 8px;
+  margin-left: 5px;
   width: 5px;
-  height: 2px; }
+  height: 5px;
+  border-radius: 50%; }
 
 /** ====E 火柴人 腿部 */
 /** ===E 火柴人 部位样式 详细*/
 /** ==E 火柴人 部位样式 */
 /** =E 火柴人样式 */
+/** =S 行走样式 */
+.sports .left {
+  animation: leftSports 1s ease-in-out infinite; }
+
+.sports .right {
+  animation: rightSports 1s ease-in-out infinite; }
+
+@keyframes leftSports {
+  0% {
+    transform: rotateZ(12deg);
+    transform-origin: center top; }
+  25% {
+    transform: rotateZ(0deg);
+    transform-origin: center top; }
+  50% {
+    transform: rotateZ(-12deg);
+    transform-origin: center top; }
+  75% {
+    transform: rotateZ(0deg);
+    transform-origin: center top; }
+  100% {
+    transform: rotateZ(12deg);
+    transform-origin: center top; } }
+@keyframes rightSports {
+  0% {
+    transform: rotateZ(-12deg);
+    transform-origin: center top; }
+  25% {
+    transform: rotateZ(0deg);
+    transform-origin: center top; }
+  50% {
+    transform: rotateZ(12deg);
+    transform-origin: center top; }
+  75% {
+    transform: rotateZ(0deg);
+    transform-origin: center top; }
+  100% {
+    transform: rotateZ(-12deg);
+    transform-origin: center top; } }
+/** =E 行走样式 */
 
 /*# sourceMappingURL=index.css.map */

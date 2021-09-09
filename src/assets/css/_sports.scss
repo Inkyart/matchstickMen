@@ -1,0 +1,60 @@
+@charset "UTF-8";
+// ------------------------------
+// @desc 火柴人行动样式
+// @author 夜明筱笙
+// @date 2021-09-09
+// ------------------------------
+
+// 旋转 角度
+@mixin angle($angle) {
+    transform: rotateZ($angle);
+    transform-origin: center top;
+}
+
+/** =S 行走样式 */
+
+
+.sports .left{
+	animation: leftSports 1s ease-in-out infinite;
+}
+.sports .right {
+	animation: rightSports 1s ease-in-out infinite;
+}
+
+@keyframes leftSports {
+	0%{
+		@include angle(12deg)
+	}
+	25%{
+		@include angle(0deg)
+	}
+	50%{
+		@include angle(-12deg)
+	}
+	75%{
+		@include angle(0deg)
+	}
+	100%{
+		@include angle(12deg)
+	}
+}
+
+@keyframes rightSports {
+	0%{
+		@include angle(-12deg)
+	}
+	25%{
+		@include angle(0deg)
+	}
+	50%{
+		@include angle(12deg)
+	}
+	75%{
+		@include angle(0deg)
+	}
+	100%{
+		@include angle(-12deg)
+	}
+}
+
+/** =E 行走样式 */

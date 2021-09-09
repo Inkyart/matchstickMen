@@ -13,8 +13,9 @@
     flex-flow: nowrap column;
     justify-content: flex-end;
     align-items: center;
-	transform-origin: center top;
+    transform-origin: center top;
 }
+
 // 旋转 角度
 @mixin angle($angle) {
     transform: rotateZ($angle);
@@ -23,14 +24,42 @@
 
 // =E 混合器
 
+// =S 变量
+
+// 火柴人 眼睛 颜色
+$eyeColor:white;
+
+// 火柴人 嘴巴 颜色
+$mouthColor:white;
+
+// 火柴人 手臂 宽度
+$handsWidth:6px;
+
+// 火柴人 腿脚 宽度
+$legsAndFeetWidth:6px;
+
+// 火柴人 大臂 长度
+$upperArmHeight:60px;
+
+// 火柴人 小臂 长度
+$lowerArmHeight:60px;
+
+// 火柴人 大腿 长度
+$thighHeight:70px;
+
+// 火柴人 小腿 长度
+$calfHeight:60px;
+
+// =E 变量
+
 
 /** =S 火柴人样式 */
 
 // 火柴人容器
 .MenContainer {
     position: absolute;
-    width: 200px;
-    height: 260px;
+    width: 230px;
+    height: 300px;
     border: 1px solid #000;
     display: flex;
     flex-flow: nowrap column;
@@ -40,17 +69,39 @@
 
 // 火柴人头部
 .header {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     position: relative;
-	background-color: blanchedalmond;
-	border: 1px solid #000;
+    background-color: #000;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background-color: $eyeColor;
+        border-radius: 50%;
+        right: 10px;
+        top: 15px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid transparent;
+        border-bottom: 1px solid $mouthColor;
+        top: 30px;
+        right: 6px;
+    }
 }
 
 // 火柴人身体
 .body {
-    width: 4px;
+    width: 6px;
     height: 120px;
     display: flex;
     flex-flow: nowrap column;
@@ -58,7 +109,8 @@
     justify-content: space-between;
     position: relative;
     background-color: #000;
-	border-radius: 250px;
+    border-radius: 250px;
+    padding: 3px 0;
 }
 
 /** ==S 火柴人 部位样式 */
@@ -67,7 +119,7 @@
 // 火柴人 肢体 部位 脚部
 .hands,
 .foots {
-	position: relative;
+    position: relative;
     border-radius: 50%;
     display: flex;
     flex-flow: nowrap row;
@@ -76,12 +128,12 @@
 
 // 左侧的 肢体
 .left {
-    @include angle(10deg);
+    @include angle(6deg);
 }
 
 // 右侧的 肢体
 .right {
-    @include angle(-10deg);
+    @include angle(-6deg);
 }
 
 // 火柴人 肢体 容器
@@ -89,8 +141,10 @@
 .hand-Container {
     border-radius: 50%;
     position: absolute;
-	top: bottom;
-	left: center;
+    top: bottom;
+    left: center;
+
+    // 容器下的 所有 子元素 全部为 黑色
     div {
         background-color: #000;
     }
@@ -103,24 +157,26 @@
 // 火柴人 上臂
 .upperArm {
     position: relative;
-    width: 2px;
-    height: 60px;
+    width: $handsWidth;
+    height: $upperArmHeight;
+    border-radius: 50px;
     @include limb();
 }
 
 // 火柴人 手肘
 .elbow {
-    width: 2px;
-    height: 2px;
+    width: $handsWidth;
+    height: 6px;
     border-radius: 50%;
-	padding: 1px;
+    padding: 1px;
 }
 
 // 火柴人 下臂
 .lowerArm {
-    width: 2px;
-    height: 50px;
+    width: $handsWidth;
+    height: $lowerArmHeight;
     @include limb();
+    border-radius: 50px;
 }
 
 // 火柴人 手掌
@@ -136,28 +192,37 @@
 /** ====S 火柴人 腿部 */
 
 // 火柴人 大腿
-.thigh{
-	width: 2px;
-	height: 60px;
+.thigh {
+    width: $legsAndFeetWidth;
+    height: $thighHeight;
     @include limb();
+    border-radius: 50px;
 }
+
 // 火柴人 膝盖
-.knee{
-    width: 2px;
-    height: 2px;
+.knee {
+    width: $legsAndFeetWidth;
+    height: 6px;
     border-radius: 50%;
-	padding: 1px;
+    padding: 1px;
 }
+
 // 火柴人 小腿
-.calf{
-	width: 2px;
-	height: 40px;
+.calf {
+    width: $legsAndFeetWidth;
+    height: $calfHeight;
     @include limb();
+    border-radius: 50px;
 }
+
 // 火柴人 脚掌
 .foot {
-	width: 5px;
-	height: 2px;
+    position: relative;
+    margin-top: 8px;
+    margin-left: 5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
 }
 
 /** ====E 火柴人 腿部 */
