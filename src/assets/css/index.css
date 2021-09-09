@@ -21,6 +21,11 @@ body {
   align-items: center;
   background-color: #c4c4c4; }
 
+#app {
+  width: 100vw;
+  height: 100vh;
+  position: relative; }
+
 /** =E 全局样式 */
 /** =S 火柴人样式 */
 .MenContainer {
@@ -31,7 +36,8 @@ body {
   display: flex;
   flex-flow: nowrap column;
   justify-content: flex-start;
-  align-items: center; }
+  align-items: center;
+  bottom: 0; }
 
 .header {
   width: 50px;
@@ -173,7 +179,7 @@ body {
 /** ===E 火柴人 部位样式 详细*/
 /** ==E 火柴人 部位样式 */
 /** =E 火柴人样式 */
-/** =S 行走样式 */
+/** =S 行走动画 */
 .sports .left {
   animation: leftSports 1s ease-in-out infinite; }
 
@@ -212,6 +218,78 @@ body {
   100% {
     transform: rotateZ(-12deg);
     transform-origin: center top; } }
-/** =E 行走样式 */
+/** =E 行走动画 */
+/** =S 跳跃动画 */
+.jump {
+  animation: jump 2s infinite ease-in-out; }
+@keyframes jump {
+  20% {
+    transform: rotateZ(10deg); }
+  40% {
+    transform: rotateZ(0deg);
+    margin-bottom: 300px; } }
+.jump > .body {
+  animation: jump-body 2s infinite ease-in-out; }
+@keyframes jump-body {
+  20% {
+    height: 100px; }
+  40% {
+    height: 120px; } }
+.jump .foot {
+  animation: jump-foot 2s infinite ease-in-out; }
+@keyframes jump-foot {
+  20% {
+    transform: rotateZ(10deg); }
+  40% {
+    transform: rotateZ(0deg); } }
+.jump .right > .thigh {
+  animation: jump-right-thigh 2s infinite ease-in-out; }
+@keyframes jump-right-thigh {
+  20% {
+    transform: rotateZ(-10deg);
+    transform-origin: center top; }
+  40% {
+    transform: rotateZ(0deg);
+    transform-origin: center top; } }
+.jump .right .calf {
+  animation: jump-right-calf 2s infinite ease-in-out; }
+@keyframes jump-right-calf {
+  20% {
+    transform: rotateZ(15deg);
+    transform-origin: center top; }
+  40% {
+    transform: rotateZ(0deg);
+    transform-origin: center top; } }
+.jump .right > .upperArm {
+  animation: jump-right-upperArm 2s infinite ease-in-out; }
+@keyframes jump-right-upperArm {
+  20% {
+    transform: rotateZ(-6deg);
+    transform-origin: center top; } }
+.jump .right .lowerArm {
+  animation: jump-right-lowerArm 2s infinite ease-in-out; }
+@keyframes jump-right-lowerArm {
+  20% {
+    transform: rotateZ(-20deg);
+    transform-origin: center top; } }
+.jump .left > .upperArm {
+  animation: jump-left-upperArm 2s infinite ease-in-out; }
+@keyframes jump-left-upperArm {
+  20% {
+    transform: rotateZ(15deg);
+    transform-origin: center top; }
+  40% {
+    transform: rotateZ(10deg);
+    transform-origin: center top; } }
+.jump .left .lowerArm {
+  animation: jump-left-lowerArm 2s infinite ease-in-out; }
+@keyframes jump-left-lowerArm {
+  20% {
+    transform: rotateZ(-15deg);
+    transform-origin: center top; }
+  40% {
+    transform: rotateZ(-10deg);
+    transform-origin: center top; } }
+/** =E 跳跃动画 */
 
 /*# sourceMappingURL=index.css.map */

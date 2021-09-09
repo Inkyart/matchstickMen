@@ -8,19 +8,14 @@
 // 旋转 角度
 @mixin angle($angle) {
     transform: rotateZ($angle);
-    transform-origin: center top;
-}
+    transform-origin: center top;}
 
-/** =S 行走样式 */
-
+/** =S 行走动画 */
 
 .sports .left{
-	animation: leftSports 1s ease-in-out infinite;
-}
+	animation: leftSports 1s ease-in-out infinite;}
 .sports .right {
-	animation: rightSports 1s ease-in-out infinite;
-}
-
+	animation: rightSports 1s ease-in-out infinite;}
 @keyframes leftSports {
 	0%{
 		@include angle(12deg)
@@ -36,9 +31,7 @@
 	}
 	100%{
 		@include angle(12deg)
-	}
-}
-
+	}}
 @keyframes rightSports {
 	0%{
 		@include angle(-12deg)
@@ -54,7 +47,100 @@
 	}
 	100%{
 		@include angle(-12deg)
-	}
-}
+	}}
 
-/** =E 行走样式 */
+/** =E 行走动画 */
+
+
+
+/** =S 跳跃动画 */
+
+.jump{
+	animation: jump 2s infinite ease-in-out;
+	@keyframes jump {
+		20%{
+			transform: rotateZ(10deg);
+		}
+		40%{
+			transform: rotateZ(0deg);
+			margin-bottom: 300px;
+		}
+}}
+.jump > .body {
+	animation: jump-body 2s infinite ease-in-out;
+	@keyframes jump-body {
+		20%{
+			height: 100px;
+		}
+		40%{
+			height: 120px;
+		}
+}}
+.jump .foot {
+	animation: jump-foot 2s infinite ease-in-out;
+	@keyframes jump-foot {
+		20%{
+			transform: rotateZ(10deg);
+		}
+		40%{
+			transform: rotateZ(0deg);
+		}
+	}}
+.jump .right > .thigh {
+	animation: jump-right-thigh 2s infinite ease-in-out;
+	@keyframes jump-right-thigh {
+		20%{
+			@include angle(-10deg);
+		}
+		40%{
+			@include angle(0deg)
+		}
+		
+	}}
+.jump .right .calf {
+	animation: jump-right-calf 2s infinite ease-in-out;
+	@keyframes jump-right-calf {
+		20%{
+			@include angle(15deg)
+		}
+		40%{
+			@include angle(0deg)
+		}
+
+	}}
+.jump .right > .upperArm {
+	animation: jump-right-upperArm 2s infinite ease-in-out;
+	@keyframes jump-right-upperArm {
+		20%{
+			@include angle(-6deg)
+		}
+	}}
+.jump .right .lowerArm {
+	animation: jump-right-lowerArm 2s infinite ease-in-out;
+	@keyframes jump-right-lowerArm {
+		20%{
+			@include angle(-20deg)
+		}
+	}}
+.jump .left > .upperArm {
+	animation: jump-left-upperArm 2s infinite ease-in-out;
+	@keyframes jump-left-upperArm {
+		20%{
+			@include angle(15deg)
+		}
+		40%{
+			@include angle(10deg)
+		}
+	}}
+.jump .left .lowerArm {
+	animation: jump-left-lowerArm 2s infinite ease-in-out;
+	@keyframes jump-left-lowerArm {
+		20%{
+			@include angle(-15deg)
+		}
+		40%{
+			@include angle(-10deg)
+		}
+	}}
+
+/** =E 跳跃动画 */
